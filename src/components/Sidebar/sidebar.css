@@ -6,20 +6,37 @@
   color: white;
   position: fixed;
   left: 0;
-  top: 64px;
+  top: 64px; /* Navbar height */
   transition: transform 0.3s ease;
   z-index: 999;
 }
+
 .sidebar.closed {
   transform: translateX(-100%);
 }
+
+.sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+
 .sidebar ul li {
   padding: 15px;
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  transition: background 0.2s;
 }
+
+.sidebar ul li span {
+  font-size: 16px;
+}
+
 .sidebar ul li:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
