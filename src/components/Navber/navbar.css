@@ -1,0 +1,15 @@
+
+.bg-teal {
+  background-color: #319790;
+  color: white;
+}
+
+.text-teal {
+  color: #319790;
+}
+
+.badge {
+  font-size: 0.6rem;
+  height: 18px;
+  line-height: 1;
+}
