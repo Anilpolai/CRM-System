@@ -3,6 +3,7 @@ import { Navbar, Button } from 'react-bootstrap';
 import { BiStore, BiBell } from 'react-icons/bi';
 import { BsMoon } from 'react-icons/bs';
 import { IoMdArrowDropdown } from 'react-icons/io';
+import './navbar.css'; // Assuming you have a CSS file for styling
 
 const CustomNavbar = ({ toggleSidebar }) => {
   return (
