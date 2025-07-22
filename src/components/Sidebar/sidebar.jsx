@@ -1,7 +1,7 @@
 // Sidebar.jsx
 import React from 'react';
 import { BiHomeAlt, BiUser, BiChat, BiCog } from 'react-icons/bi';
-import './Sidebar.css'; 
+import './sidebar.css';
 
 const Sidebar = ({ isOpen }) => {
   return (
