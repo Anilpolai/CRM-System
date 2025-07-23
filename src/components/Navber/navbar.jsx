@@ -83,7 +83,7 @@ const CustomNavbar = ({ toggleSidebar }) => {
                                     <span className={`fw-semibold ${darkMode ? 'text-light' : 'text-dark'}`}>Demo Das</span>
                                     <small className="text-muted">Admin</small>
                                 </div>
-                                <IoMdArrowDropdown className={`${darkMode ? 'text-light' : 'text-dark'}`} />
+                                {/* <IoMdArrowDropdown className={`${darkMode ? 'text-light' : 'text-dark'}`} /> */}
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu className="dropdown-menu-end mt-2">

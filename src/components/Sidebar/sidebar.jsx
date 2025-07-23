@@ -49,6 +49,7 @@ const Sidebar = ({ isOpen }) => {
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
+
       </Nav>
     </div>
   );

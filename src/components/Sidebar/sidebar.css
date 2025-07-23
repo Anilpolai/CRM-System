@@ -1,3 +1,4 @@
+/* Sidebar container */
 .sidebar {
   width: 240px;
   height: 100vh;
@@ -12,14 +13,15 @@
   transition: transform 0.3s ease-in-out;
 }
 
+/* Sidebar open/closed state */
 .sidebar.closed {
   transform: translateX(-100%);
 }
-
 .sidebar.open {
   transform: translateX(0);
 }
 
+/* Sidebar NavLink style */
 .sidebar-link {
   display: flex;
   align-items: center;
@@ -41,38 +43,61 @@
   font-weight: bold;
 }
 
-/* Accordion matches sidebar look */
+/* Accordion inside sidebar (Roles section) */
+/* Roles Accordion Header styling (match other sidebar links) */
+.sidebar-accordion .accordion-item {
+  border: none;  
+  background-color: transparent;
+}
+
+.sidebar-accordion .accordion-header {
+  padding: 0;
+}
+
 .sidebar-accordion .accordion-button {
-  background-color: transparent !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
   color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 10px 16px;
-  font-size: 16px;
   border-radius: 8px;
   margin-bottom: 4px;
-}
-
-.sidebar-accordion .accordion-button:not(.collapsed) {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-.sidebar-accordion .accordion-button:focus {
+  font-weight: bold;
   box-shadow: none;
 }
 
-.sidebar-accordion .accordion-body {
-  padding: 4px 0 0 8px;
+.sidebar-accordion .accordion-button:not(.collapsed) {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Role item same as sidebar-link but not clickable */
+.sidebar-accordion .accordion-button::after {
+  transform: rotate(90deg);
+  filter: brightness(0) invert(1); /* Make arrow white */
+}
+
+.sidebar-accordion .accordion-body {
+  padding: 4px 0 0 24px; /* Indent child links slightly */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Child links under Roles */
+.sidebar-accordion .accordion-body .sidebar-link {
+  padding: 8px 16px;
+  margin: 2px 0;
+}
+
+
+/* Optional disabled roles (if needed) */
 .disabled-link {
   pointer-events: none;
   opacity: 0.9;
 }
-
 .disabled-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: rgb(2, 2, 2);
 }
 
 /* Dark mode support */
@@ -83,4 +108,9 @@ body.dark-mode .sidebar {
 body.dark-mode .sidebar-link:hover,
 body.dark-mode .disabled-link:hover {
   background-color: rgba(255, 255, 255, 0.15);
+}
+
+body.dark-mode .sidebar-link.active,
+body.dark-mode .sidebar-accordion .sidebar-link.active {
+  background-color: rgba(255, 255, 255, 0.2);
 }
