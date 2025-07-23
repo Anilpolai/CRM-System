@@ -5,14 +5,12 @@
   background-color: #348c87;
   color: white;
   position: fixed;
+  top: 63px; /* adjust based on navbar height */
   left: 0;
-  top: 64px; /* Navbar height */
-  transition: transform 0.3s ease;
   z-index: 999;
-  display: flex;
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
   padding: 0 15px 20px;
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
 }
 
 .sidebar.closed {
@@ -46,3 +44,7 @@
   border-radius: 8px;
 }
 
+/* Dark Mode Support */
+body.dark-mode .sidebar {
+  background-color: #224c48;
+}
