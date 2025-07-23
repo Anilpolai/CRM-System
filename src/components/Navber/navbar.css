@@ -13,3 +13,47 @@
   height: 18px;
   line-height: 1;
 }
+/* Settings Icon - Circular + Animated */
+
+.bg-teal {
+  background-color: #319790;
+  color: white;
+}
+
+.text-teal {
+  color: #319790;
+}
+
+.badge {
+  font-size: 0.6rem;
+  height: 18px;
+  line-height: 1;
+}
+/* Settings Icon - Circular + Animated */
+.settings-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(5, 243, 215, 0.737);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Important for floating effect */
+  bottom: 100px;    /* 100px above the bottom */
+  right: 20px;      /* Distance from right edge */
+  animation: rotate360 2s linear infinite;
+  cursor: pointer;
+  z-index: 1000;    /* Stay above other content */
+}
+
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+

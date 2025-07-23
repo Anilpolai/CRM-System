@@ -1,7 +1,7 @@
 // src/components/Sidebar.jsx
 import React from 'react';
 import { BiHomeAlt, BiUser, BiChat, BiCog } from 'react-icons/bi';
-import './sidebar.css'; // Make sure this file name is all lowercase
+import './sidebar.css';
 
 const Sidebar = ({ isOpen }) => {
   return (
@@ -16,10 +16,8 @@ const Sidebar = ({ isOpen }) => {
         <li>
           <BiChat size={20} /> <span>Messages</span>
         </li>
-        <li>
-          <BiCog size={20} /> <span>Settings</span>
-        </li>
       </ul>
+
     </div>
   );
 };

@@ -1,4 +1,4 @@
-/* Sidebar.css */
+/* Sidebar styles */
 .sidebar {
   width: 240px;
   height: 100vh;
@@ -9,6 +9,10 @@
   top: 64px; /* Navbar height */
   transition: transform 0.3s ease;
   z-index: 999;
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+  padding: 0 15px 20px;
 }
 
 .sidebar.closed {
@@ -41,3 +45,4 @@
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
 }
+
