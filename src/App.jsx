@@ -9,6 +9,10 @@ import Salary from './pages/salary';
 import Tasks from './pages/Tasks';
 import JobApply from './pages/JobApply';
 
+import HR from './hr/hr';
+import Admin from './Admin/admin';
+import Manager from './Manger/manger';
+
 function App() {
   return (
     <Layout>
@@ -19,6 +23,9 @@ function App() {
         <Route path="/salary" element={<Salary />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/job-apply" element={<JobApply />} />
+        <Route path="/roles/hr" element={<HR />} />
+        <Route path="/roles/admin" element={<Admin />} />
+        <Route path="/roles/manager" element={<Manager />} />
       </Routes>
     </Layout>
   );

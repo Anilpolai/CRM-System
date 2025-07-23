@@ -5,10 +5,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar {
-  background-color: #ffffff;
-}
-
 /* Dark Mode */
 body.dark-mode {
   background-color: #1e1e2f;
@@ -31,6 +27,19 @@ body.dark-mode .text-muted {
   color: #bbbbbb !important;
 }
 
+body.dark-mode .dropdown-menu {
+  background-color: #2e2e3e;
+  color: white;
+}
+
+body.dark-mode .dropdown-item {
+  color: white;
+}
+
+body.dark-mode .dropdown-item:hover {
+  background-color: #444;
+}
+
 /* Badge Styling */
 .badge {
   font-size: 0.65rem;
@@ -40,6 +49,13 @@ body.dark-mode .text-muted {
   padding: 2px;
 }
 
+
+.navber-menu{
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: #f8f9fa;
+  font-size: 0px;
+}
 /* Settings Icon - Circular & Rotating */
 .settings-icon {
   width: 45px;
@@ -58,15 +74,11 @@ body.dark-mode .text-muted {
 }
 
 @keyframes rotate360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-/* Responsive Adjustments */
+/* Responsive */
 @media (max-width: 576px) {
   .navbar .fs-5 {
     font-size: 1rem !important;

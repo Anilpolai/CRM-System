@@ -1,36 +1,55 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { Accordion, Nav } from 'react-bootstrap';
 import {
-  BiHomeAlt, BiUser, BiChat, BiDollarCircle, BiTask, BiClipboard, BiBriefcase
+  BiHomeAlt, BiUser, BiChat, BiDollarCircle, BiTask, BiBriefcase, BiUserCircle
 } from 'react-icons/bi';
 import './sidebar.css';
 
 const Sidebar = ({ isOpen }) => {
-  const location = useLocation();
-  const current = location.pathname;
-
-  const menuItems = [
-    { name: "Dashboard", icon: <BiHomeAlt />, path: "/" },
-    { name: "Users", icon: <BiUser />, path: "/users" },
-    { name: "Messages", icon: <BiChat />, path: "/messages" },
-    { name: "Salary Payment", icon: <BiDollarCircle />, path: "/salary" },
-    { name: "Tasks", icon: <BiTask />, path: "/tasks" },
-    // { name: "Project Status", icon: <BiClipboard />, path: "/projects" },
-    { name: "Job Apply", icon: <BiBriefcase />, path: "/job-apply" },
-  ];
-
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
-      <ul className="list-unstyled p-3 m-0">
-        {menuItems.map((item) => (
-          <li key={item.name} className={current === item.path ? "active" : ""}>
-            <Link to={item.path} className="sidebar-link">
-              {item.icon}
-              <span>{item.name}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Nav className="flex-column p-3">
+        <NavLink to="/" className="sidebar-link" activeclassname="active">
+          <BiHomeAlt /> <span>Dashboard</span>
+        </NavLink>
+        <NavLink to="/users" className="sidebar-link" activeclassname="active">
+          <BiUser /> <span>Users</span>
+        </NavLink>
+        <NavLink to="/messages" className="sidebar-link" activeclassname="active">
+          <BiChat /> <span>Messages</span>
+        </NavLink>
+        <NavLink to="/salary" className="sidebar-link" activeclassname="active">
+          <BiDollarCircle /> <span>Salary Payment</span>
+        </NavLink>
+        <NavLink to="/tasks" className="sidebar-link" activeclassname="active">
+          <BiTask /> <span>Tasks</span>
+        </NavLink>
+        <NavLink to="/job-apply" className="sidebar-link" activeclassname="active">
+          <BiBriefcase /> <span>Job Apply</span>
+        </NavLink>
+
+        {/* Roles Accordion with Routing */}
+        <Accordion className="sidebar-accordion mt-2" alwaysOpen>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>
+              <BiUserCircle className="me-2" />
+              <span>Roles</span>
+            </Accordion.Header>
+            <Accordion.Body>
+              <NavLink to="/roles/hr" className="sidebar-link" activeclassname="active">
+                <BiUserCircle /> <span>HR</span>
+              </NavLink>
+              <NavLink to="/roles/admin" className="sidebar-link" activeclassname="active">
+                <BiUserCircle /> <span>Admin</span>
+              </NavLink>
+              <NavLink to="/roles/manager" className="sidebar-link" activeclassname="active">
+                <BiUserCircle /> <span>Manager</span>
+              </NavLink>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
+      </Nav>
     </div>
   );
 };
