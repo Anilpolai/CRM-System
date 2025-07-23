@@ -1,6 +1,6 @@
 // src/components/Sidebar.jsx
 import React from 'react';
-import { BiHomeAlt, BiUser, BiChat } from 'react-icons/bi';
+import { BiHomeAlt, BiUser, BiChat} from 'react-icons/bi';
 import './sidebar.css';
 
 const Sidebar = ({ isOpen }) => {
@@ -17,6 +17,7 @@ const Sidebar = ({ isOpen }) => {
           <BiChat size={20} /> <span>Messages</span>
         </li>
       </ul>
+
     </div>
   );
 };
