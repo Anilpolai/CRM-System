@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navber/navbar';
 import Sidebar from '../Sidebar/sidebar';
-import './layout.css'; // optional for layout-specific CSS
 
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
