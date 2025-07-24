@@ -11,6 +11,7 @@ import Messages from './pages/messages';
 import Salary from './pages/salary';
 import Tasks from './pages/Tasks';
 import JobApply from './pages/JobApply';
+import Enployees from './pages/Enployees/Enployees';
 
 // Roles
 import HR from './hr/hr';
@@ -24,7 +25,7 @@ function App() {
   // Show loader on route change
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 500); // Keep timing short for snappy feel
+    const timer = setTimeout(() => setLoading(false), 1200); // Keep timing short for snappy feel
     return () => clearTimeout(timer);
   }, [location]);
 
@@ -74,6 +75,7 @@ function App() {
             <Route path="/salary" element={<Salary />} />
             <Route path="/tasks" element={<Tasks />} />
             <Route path="/job-apply" element={<JobApply />} />
+            <Route path="/enployees" element={<Enployees/>} />
             <Route path="/roles/hr" element={<HR />} />
             <Route path="/roles/admin" element={<Admin />} />
             <Route path="/roles/manager" element={<Manager />} />

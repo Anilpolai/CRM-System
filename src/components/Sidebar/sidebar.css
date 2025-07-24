@@ -117,6 +117,7 @@ body.dark-mode {
 
 .sidebar-accordion .accordion-button:not(.collapsed) {
   background-color: var(--primary-active);
+  color: whitesmoke;
 }
 
 .sidebar-accordion .accordion-button::after {

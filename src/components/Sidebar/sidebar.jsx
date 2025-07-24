@@ -29,6 +29,9 @@ const Sidebar = ({ isOpen }) => {
         <NavLink to="/job-apply" className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}>
           <BiBriefcase /> <span>Job Apply</span>
         </NavLink>
+        <NavLink to="/enployees" className={({ isActive }) => isActive ? 'sidebar-link active' : 'sidebar-link'}>
+          <BiBriefcase /> <span>Enployees</span>
+        </NavLink>
 
         <Accordion className="sidebar-accordion mt-2" alwaysOpen>
           <Accordion.Item eventKey="0">

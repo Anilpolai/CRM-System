@@ -53,7 +53,7 @@ body.dark-mode .dropdown-item:hover {
 .navber-menu{
   border-radius: 50%;
   border: 1px solid #ccc;
-  background-color: #f8f9fa;
+  background-color: transparent;
   font-size: 0px;
 }
 /* Settings Icon - Circular & Rotating */
