@@ -18,12 +18,6 @@ body {
   color: var(--text);
 }
 
-/* a,
-.btn-primary,
-.badge.bg-primary {
-  background-color: var(--primary) !important;
-  border-color: var(--primary) !important;
-} */
 
 .text-primary {
   color: var(--primary) !important;
