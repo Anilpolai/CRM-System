@@ -101,3 +101,25 @@ body.dark-mode .dropdown-item:hover {
     right: 16px;
   }
 }
+
+/* Make sure the floating settings icon stays clickable */
+.settings-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1100;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  transition: transform .2s;
+}
+.settings-icon:hover {
+  transform: scale(1.05);
+}

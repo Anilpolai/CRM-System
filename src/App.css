@@ -1,0 +1,5 @@
+:root {
+  --primary: #0cb3a6;
+  --primary-hover: rgba(12, 179, 166, 0.1);
+  --primary-active: rgba(12, 179, 166, 0.2);
+}

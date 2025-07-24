@@ -1,27 +1,53 @@
-/* Sidebar container */
+:root {
+  --primary: #0cb3a6;
+  --primary-hover: rgba(255, 255, 255, 0.1);
+  --primary-active: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode {
+  --primary: #08b0a0;
+  --primary-hover: rgba(255, 255, 255, 0.15);
+  --primary-active: rgba(255, 255, 255, 0.2);
+}
+
 .sidebar {
   width: 240px;
   height: 100vh;
-  background-color: #348c87;
-  color: white;
   position: fixed;
-  top: 63px;
+  top: 61px;
   left: 0;
   z-index: 999;
   padding-bottom: 20px;
   overflow-y: auto;
-  transition: transform 0.3s ease-in-out;
+  background-color: var(--primary);
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-/* Sidebar open/closed state */
-.sidebar.closed {
-  transform: translateX(-100%);
-}
 .sidebar.open {
   transform: translateX(0);
 }
 
-/* Sidebar NavLink style */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+    top: 56px;
+    height: calc(100vh - 56px);
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 61px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 61px);
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+}
+
 .sidebar-link {
   display: flex;
   align-items: center;
@@ -31,22 +57,42 @@
   padding: 10px 16px;
   border-radius: 8px;
   margin-bottom: 4px;
-  transition: background 0.3s ease;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.sidebar.open .sidebar-link {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .sidebar-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--primary-hover);
 }
 
 .sidebar-link.active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--primary-active);
   font-weight: bold;
+  border-left: 4px solid #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transform: translateX(2px);
+  transition: all 0.3s ease-in-out;
 }
 
-/* Accordion inside sidebar (Roles section) */
-/* Roles Accordion Header styling (match other sidebar links) */
+.disabled-link {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.disabled-link:hover {
+  background-color: var(--primary-hover);
+  color: white;
+}
+
+/* Accordion Styles */
 .sidebar-accordion .accordion-item {
-  border: none;  
+  border: none;
   background-color: transparent;
 }
 
@@ -55,7 +101,7 @@
 }
 
 .sidebar-accordion .accordion-button {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--primary-hover);
   border: none;
   color: white;
   display: flex;
@@ -66,51 +112,25 @@
   margin-bottom: 4px;
   font-weight: bold;
   box-shadow: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar-accordion .accordion-button:not(.collapsed) {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--primary-active);
 }
 
 .sidebar-accordion .accordion-button::after {
   transform: rotate(90deg);
-  filter: brightness(0) invert(1); /* Make arrow white */
+  filter: brightness(0) invert(1);
 }
 
 .sidebar-accordion .accordion-body {
-  padding: 4px 0 0 24px; /* Indent child links slightly */
+  padding: 4px 0 0 24px;
   display: flex;
   flex-direction: column;
 }
 
-/* Child links under Roles */
 .sidebar-accordion .accordion-body .sidebar-link {
   padding: 8px 16px;
   margin: 2px 0;
-}
-
-
-/* Optional disabled roles (if needed) */
-.disabled-link {
-  pointer-events: none;
-  opacity: 0.9;
-}
-.disabled-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: rgb(2, 2, 2);
-}
-
-/* Dark mode support */
-body.dark-mode .sidebar {
-  background-color: #08b0a0;
-}
-
-body.dark-mode .sidebar-link:hover,
-body.dark-mode .disabled-link:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-body.dark-mode .sidebar-link.active,
-body.dark-mode .sidebar-accordion .sidebar-link.active {
-  background-color: rgba(255, 255, 255, 0.2);
 }
