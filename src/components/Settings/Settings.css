@@ -1,0 +1,50 @@
+.theme-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, border-color 0.3s ease;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+.theme-dot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.15);
+}
+
+.theme-dot.active {
+  border-color: #fff;
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth transition for dark mode toggle */
+#dark-mode-switch {
+  transition: all 0.3s ease-in-out;
+}
+
+.offcanvas-body h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.offcanvas-body .btn-outline-secondary {
+  margin-top: 1rem;
+}
+
+/* Optional: Dark mode support */
+body.dark-mode .offcanvas {
+  background-color: #1e1e2f;
+  color: white;
+}
+
+body.dark-mode .theme-dot {
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .theme-dot.active {
+  border-color: #fff;
+  outline: 2px solid var(--primary);
+}

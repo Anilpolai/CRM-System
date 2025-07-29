@@ -1,36 +1,38 @@
-body{
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-
-/* src/theme.css */
+src/theme.css
 :root {
   --bg: #ffffff;
   --text: #121212;
-  --primary: #0cb3a6; /* default teal */
+  --primary: #0cb3a6;
   --card: #ffffff;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --border-color: #ddd;
+  --table-bg: #ffffff;
+  --input-bg: #fff;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
 }
-
 
 .text-primary {
   color: var(--primary) !important;
 }
 
-/* Dark mode overrides (you already add .dark-mode on body) */
 body.dark-mode {
   --bg: #1e1e2f;
   --text: #ffffff;
   --card: #2e2e3e;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --border-color: #444;
+  --table-bg: #1f1f2e;
+  --input-bg: #2a2a3b;
 }
 
-/* Small helper for colored dots in settings */
+/* Settings dot */
 .theme-dot {
   width: 28px;
   height: 28px;
@@ -46,7 +48,7 @@ body.dark-mode {
   border-color: #fff;
 }
 
-/* (optional) style Offcanvas header bg when dark */
+/* Offcanvas override */
 body.dark-mode .offcanvas,
 body.dark-mode .offcanvas-header {
   background-color: var(--card);

@@ -1,6 +1,7 @@
 // src/components/ThemeSettings/ThemeSettings.jsx
 import React, { useEffect, useState } from 'react';
 import { Offcanvas, Form, Button } from 'react-bootstrap';
+import './Settings.css';
 
 const PRESET_COLORS = [
   { name: 'Teal', value: '#0cb3a6' },

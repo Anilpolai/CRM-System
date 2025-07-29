@@ -22,7 +22,7 @@ body.dark-mode {
   background-color: var(--primary);
   color: white;
   transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar.open {
@@ -36,16 +36,6 @@ body.dark-mode {
     height: calc(100vh - 56px);
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
   }
-}
-
-.sidebar-backdrop {
-  position: fixed;
-  top: 61px;
-  left: 0;
-  width: 100%;
-  height: calc(100vh - 61px);
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 998;
 }
 
 .sidebar-link {
@@ -75,22 +65,32 @@ body.dark-mode {
   background-color: var(--primary-active);
   font-weight: bold;
   border-left: 4px solid #fff;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   transform: translateX(2px);
   transition: all 0.3s ease-in-out;
 }
 
-.disabled-link {
-  pointer-events: none;
-  opacity: 0.6;
+/* Icon Background Animation */
+.icon-bg {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.disabled-link:hover {
-  background-color: var(--primary-hover);
-  color: white;
+.sidebar-link:hover .icon-bg {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
 }
 
-/* Accordion Styles */
+.sidebar-link.active .icon-bg {
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Accordion Styling */
 .sidebar-accordion .accordion-item {
   border: none;
   background-color: transparent;
@@ -112,7 +112,7 @@ body.dark-mode {
   margin-bottom: 4px;
   font-weight: bold;
   box-shadow: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .sidebar-accordion .accordion-button:not(.collapsed) {

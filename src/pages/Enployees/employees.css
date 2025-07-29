@@ -1,0 +1,94 @@
+/* Employees.css */
+.dashboard-container {
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.dashboard-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Table styling for both modes */
+.employee-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border-collapse: collapse;
+}
+
+/* Header */
+.employee-table thead {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+/* Cells */
+.employee-table th,
+.employee-table td {
+  padding: 14px;
+  vertical-align: middle;
+  border: 1px solid var(--border-color);
+  background-color: var(--table-bg);
+  color: var(--text-color);
+}
+
+/* Row hover effect */
+.employee-table tbody tr:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Dark mode overrides */
+body.dark-mode .employee-table th,
+body.dark-mode .employee-table td {
+  background-color: #1f1f2e;
+  color: #fff;
+}
+
+body.dark-mode .employee-table thead {
+  background-color: #29293d;
+  color: #fff;
+}
+
+/* Modal and form input styling */
+.modal-content {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 10px;
+}
+
+.form-control {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+/* Table styling */
+.table {
+  background-color: var(--table-bg);
+  color: var(--text);
+  border-color: var(--border-color);
+}
+
+.table th {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.table td,
+.table th {
+  border: 1px solid var(--border-color);
+}
+
+.modal-content {
+  background-color: var(--card);
+  color: var(--text);
+}
+
+.form-control {
+  background-color: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border-color);
+}
