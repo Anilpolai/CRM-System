@@ -1,61 +1,4 @@
-/* Light Mode */
-body {
-  background-color: #ffffff;
-  color: #000000;
-  transition: background-color 0.3s, color 0.3s;
-}
 
-/* Dark Mode */
-body.dark-mode {
-  background-color: #1e1e2f;
-  color: #ffffff;
-}
-
-body.dark-mode .navbar {
-  background-color: #2e2e3e !important;
-}
-
-body.dark-mode .text-primary {
-  color: #66ffcc !important;
-}
-
-body.dark-mode .bg-white {
-  background-color: #2e2e3e !important;
-}
-
-body.dark-mode .text-muted {
-  color: #bbbbbb !important;
-}
-
-body.dark-mode .dropdown-menu {
-  background-color: #2e2e3e;
-  color: white;
-}
-
-body.dark-mode .dropdown-item {
-  color: white;
-}
-
-body.dark-mode .dropdown-item:hover {
-  background-color: #444;
-}
-
-/* Badge Styling */
-.badge {
-  font-size: 0.65rem;
-  min-width: 16px;
-  height: 16px;
-  line-height: 1.2;
-  padding: 2px;
-}
-
-
-.navber-menu{
-  border-radius: 50%;
-  border: 1px solid #ccc;
-  background-color: transparent;
-  font-size: 0px;
-}
 /* Settings Icon - Circular & Rotating */
 .settings-icon {
   width: 45px;
@@ -103,7 +46,7 @@ body.dark-mode .dropdown-item:hover {
 }
 
 /* Make sure the floating settings icon stays clickable */
-.settings-icon {
+/* .settings-icon {
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -119,7 +62,95 @@ body.dark-mode .dropdown-item:hover {
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,.15);
   transition: transform .2s;
-}
+} */
 .settings-icon:hover {
   transform: scale(1.05);
+}
+:root {
+  --primary: #0d6efd;
+}
+
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.theme-toggle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.theme-toggle:hover {
+  background-color: var(--primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #1e1e1e;
+  color: #ddd;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.settings-icon {
+  position: fixed;
+  bottom: 150px;
+  right: 20px;
+  background-color: var(--primary);
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.logo-color-dot {
+  width: 10px;
+  height: 10px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+.navber-menu-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.navber-menu-icon:hover {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+body.dark-mode .navber-menu-icon {
+  background-color: #2c2c2c;
+  color: #ccc;
+}
+
+body.dark-mode .navber-menu-icon:hover {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.3);
 }
