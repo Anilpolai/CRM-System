@@ -1,6 +1,6 @@
-// Tasks.jsx
 import React, { useState } from "react";
 import { Table, Button, Modal, Form } from "react-bootstrap";
+import "./Tasks.css";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([
@@ -16,29 +16,34 @@ const Tasks = () => {
   };
 
   return (
-    <div className="p-4">
-      <h3>Tasks</h3>
-      <Button onClick={() => setShow(true)}>Add Task</Button>
-      <Table striped bordered hover className="mt-3">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Title</th>
-            <th>Assigned To</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {tasks.map((task, idx) => (
-            <tr key={task.id}>
-              <td>{idx + 1}</td>
-              <td>{task.title}</td>
-              <td>{task.assignedTo}</td>
-              <td>{task.status}</td>
+    <div className="tasks-page">
+      <div className="tasks-header">
+        <h3>Tasks</h3>
+        <Button onClick={() => setShow(true)} variant="primary">Add Task</Button>
+      </div>
+      
+      <div className="tasks-table-wrapper">
+        <Table striped bordered hover responsive className="custom-table w-100">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Title</th>
+              <th>Assigned To</th>
+              <th>Status</th>
             </tr>
-          ))}
-        </tbody>
-      </Table>
+          </thead>
+          <tbody>
+            {tasks.map((task, idx) => (
+              <tr key={task.id}>
+                <td>{idx + 1}</td>
+                <td>{task.title}</td>
+                <td>{task.assignedTo}</td>
+                <td>{task.status}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
 
       <Modal show={show} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
@@ -46,21 +51,21 @@ const Tasks = () => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group>
+            <Form.Group className="mb-2">
               <Form.Label>Title</Form.Label>
               <Form.Control
                 value={newTask.title}
                 onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
               />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="mb-2">
               <Form.Label>Assigned To</Form.Label>
               <Form.Control
                 value={newTask.assignedTo}
                 onChange={(e) => setNewTask({ ...newTask, assignedTo: e.target.value })}
               />
             </Form.Group>
-            <Form.Group>
+            <Form.Group className="mb-2">
               <Form.Label>Status</Form.Label>
               <Form.Control
                 value={newTask.status}
@@ -70,7 +75,7 @@ const Tasks = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleAdd}>Add</Button>
+          <Button variant="success" onClick={handleAdd}>Add</Button>
         </Modal.Footer>
       </Modal>
     </div>

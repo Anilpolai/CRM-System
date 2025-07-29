@@ -1,0 +1,78 @@
+:root {
+  --primary: #0d6efd;
+  --card-bg: #ffffff;
+  --text-color: #333;
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --table-bg: #ffffff;
+  --table-text: #000000;
+}
+
+body.dark-mode {
+  --card-bg: #2c2c2c;
+  --text-color: #ffffff;
+  --card-shadow: rgba(255, 255, 255, 0.05);
+  --table-bg: #000000;         /* Full black table background */
+  --table-text: #ffffff;       /* White text inside table */
+}
+
+.tasks-page {
+  padding: 25px;
+  /* background: var(--card-bg);
+  color: var(--text-color); */
+  /* border-radius: 16px;
+  box-shadow: 0 4px 12px var(--card-shadow); */
+  margin: 20px;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tasks-header h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.tasks-table-wrapper {
+  overflow-x: auto;
+   border-radius: 16px;
+}
+
+/* ✅ Fully themed table */
+.custom-table {
+  width: 100%;
+  background-color: var(--table-bg);
+  color: var(--table-text);
+  border: 1px solid var(--table-text);
+  
+}
+
+.custom-table thead th {
+  background-color: var(--primary);
+  color: white;
+  text-align: center;
+}
+
+.custom-table tbody td {
+  text-align: center;
+  border-color: var(--table-text);
+}
+
+.modal-content {
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.form-control {
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .form-control {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
