@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Table, Button, Modal, Form } from "react-bootstrap";
-import "./Tasks.css";
+import "./tasks.css";
 
 const Tasks = () => {
   const [tasks, setTasks] = useState([
